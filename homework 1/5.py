@@ -28,10 +28,10 @@ def findavgclosest(dic):
     names = [ key for key in dic.keys() if abs(dic[key]-m)==avgclosest]
     return {"value":dic[names[0]], "names":names}
 
-X =GenerateDictionary(10, 1, 5)
+X =GenerateDictionary(10, 1, 500)
 print("Сгенерированный словарь:\n",X, sep="")
 print("Среднее = %.3f"%mean(X))
-print("Абс. сумма = %d"%sum(list(X.values())))
+print("Абс. сумма = %d"%abs(sum(list(X.values()))))
 print("Дисперсия = %.3f"%var(X))
 min_dic=findmin(X); avg_dic = findavgclosest(X); max_dic=findmax(X)
 print("Человек с наименьшим долгом(%dруб):"%min_dic['value'],', '.join(min_dic['names']))
